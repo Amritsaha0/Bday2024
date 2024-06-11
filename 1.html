@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="birthday-music" src="Romantic-Birthday.mp3" loop autoplay></audio>
+    <div class="container">
+        <nav>
+            <a href="#gallery" class="nav-btn">Photo Gallery</a>
+            <a href="#story" class="nav-btn">Love Story</a>
+            <a href="wishes.html" class="nav-btn">Guest Wishes</a>
+            <a href="#timeline-section" class="nav-btn">Our Love Timeline</a>
+        </nav>
+
+        <section id="home">
+            <h1 class="animate-text">Happy Birthday, Ziyaaa!</h1>       
+            <div id="countdown" class="countdown"></div>
+            <img src="WhatsApp Image 2024-06-11 at 12.31.03_03eef5dd.jpg" alt="Birthday Image" class="birthday-img">
+            <p class="message">Wishing you all the best on your special day!</p>
+            <p id="surprise-message" class="hidden">You are the most wonderful person in my life. Happy Birthday!</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="slideshow-container">
+                <!-- Images will be dynamically added here -->
+            </div>
+        </section>
+        <div class="special-message">
+            <h2>Special Message</h2>
+            <p>This is a special message section where you can add your heartfelt message or any other content you'd like to highlight.</p>
+            <p>Feel free to customize this section with your own message and styling!</p>
+        </div>
+        
+        <section id="story">
+            <h2>Our Love Story</h2>
+            <p>Explore the timeline of our beautiful journey together...</p>
+            <button class="timeline-btn" onclick="window.location.href='timeline.html'">Click Me</button>
+        </section>
+    <div>
+        
+        
+
+        <footer><h2>Wishes from Friend's</h2>
+            <div id="guest-comments"></div>
+            <p><a href="wishes.html" class="btn">View Friend's wishes here</a>.</p>
+
+        </footer>
+    </div>
+    </div>
+    
+
+    <script>
+        // Array of image URLs
+        var imageUrls = [
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.50_8dd223ba.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.51_7f59b443.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.51_7439f6bf.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.51_e6bac985.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.54_1c753b50.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.54_d9af71ee.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.57_069c49c2.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.57_eaad2b7d.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.58_27d00758.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.30.59_e5417f05.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.00_2c4d1aff.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.00_97f100c9.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.01_492fefac.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.01_4317b852.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.01_a68f6de2.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.02_6bdafeb1.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.04_ca175e30.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.03_10ebda9b.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.03_8eb3c3ff.jpg",
+            "New folder/WhatsApp Image 2024-06-11 at 12.31.02_23441351.jpg"
+        ];
+
+        // Initialize index for slideshow
+        var slideIndex = 0;
+
+        // Function to start slideshow
+        function startSlideshow() {
+            var slides = document.querySelectorAll('.mySlides');
+            slides.forEach(slide => slide.style.display = "none");
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(startSlideshow, 2000); // Change slide every 2 seconds
+        }
+
+        // Function to initialize slideshow
+        function initializeSlideshow() {
+            var slideshowContainer = document.querySelector(".slideshow-container");
+            imageUrls.forEach((imageUrl, index) => {
+                var slide = document.createElement("div");
+                slide.classList.add("mySlides");
+                var img = document.createElement("img");
+                img.src = imageUrl;
+                img.style.width = "400px"; // Set image width
+                img.style.height = "400px"; // Set image height
+                slide.appendChild(img);
+                slideshowContainer.appendChild(slide);
+            });
+            startSlideshow();
+        }
+
+        // Initialize the slideshow
+        initializeSlideshow();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
